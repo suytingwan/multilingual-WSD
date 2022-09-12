@@ -65,8 +65,8 @@ This the the code repo for COLING2022: Multilingual Word Sense Disambiguation wi
 
 ### Experiments with MuLaN
 
-    ```
-    CUDA_VISIBLE_DEVICES=0,1 python biencoder_mwsd.py --ckpt ./ckpts/mulan_de \
+   ```
+   CUDA_VISIBLE_DEVICES=0,1 python biencoder_mwsd.py --ckpt ./ckpts/mulan_de \
         --data-path ./Evaluation \
         --valid-path ./preprocess \
         --train-path ./mulan/mulan-de/transfer_filter_new_check.csv \
@@ -76,12 +76,12 @@ This the the code repo for COLING2022: Multilingual Word Sense Disambiguation wi
         --split semeval2013-de \
         --multigpu \
         --valid-small
-    ```
+   ```
 
 ### Evaluation
 
-    ```
-    CUDA_VISIBLE_DEVICES=0,1 python biencoder_mwsd.py --ckpt ./ckpts/trans_de \
+   ```
+   CUDA_VISIBLE_DEVICES=0,1 python biencoder_mwsd.py --ckpt ./ckpts/trans_de \
         --data-path ./Evaluation \
         --valid-path ./preprocess \
         --train-path ./translation/train_corpora \
@@ -90,6 +90,6 @@ This the the code repo for COLING2022: Multilingual Word Sense Disambiguation wi
         --grad-bsz 30 \
         --multigpu \
         --eval
-    ```
+   ```
 
 
