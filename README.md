@@ -45,7 +45,7 @@ This the the code repo for COLING2022: Multilingual Word Sense Disambiguation wi
    ```
 
 ## Experiments 
-   The difference between translated data and MuLaN is the different training data, inventories, and glosses. Since no validation data provided, a small percentage of test data from semevel13 is used as evaluation. For easy experiments, our code and preprocessed data can be download at [inventory and evaluation](https://drive.google.com/drive/folders/1G79S-t2Li867bvDPjh2zQZMhgJa6CkKK?usp=sharing).
+   The difference between translated data and MuLaN is the different training data, inventories, and glosses. Since no validation data provided, a small percentage of test data from semevel13 is used as evaluation. For easy experiments, our code and preprocessed data can be download at [code and data](https://drive.google.com/drive/folders/1G79S-t2Li867bvDPjh2zQZMhgJa6CkKK?usp=sharing).
 
 ### Experiments with translated data
 
