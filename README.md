@@ -49,8 +49,8 @@ This the the code repo for COLING2022: Multilingual Word Sense Disambiguation wi
 
 ### Experiments with translated data
 
-    ```
-    CUDA_VISIBLE_DEVICES=3,0 python biencoder_mwsd.py --ckpt ./ckpts/trans_de \
+   ```
+   CUDA_VISIBLE_DEVICES=3,0 python biencoder_mwsd.py --ckpt ./ckpts/trans_de \
         --data-path ./Evaluation \
         --valid-path ./preprocess \
         --train-path ./translation/train_corpora \
@@ -60,7 +60,7 @@ This the the code repo for COLING2022: Multilingual Word Sense Disambiguation wi
         --split semeval2013-de \
         --multigpu \
         --valid-small
-    ```
+   ```
 
 
 ### Experiments with MuLaN
