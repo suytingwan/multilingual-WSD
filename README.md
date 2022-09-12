@@ -88,6 +88,7 @@ This the the code repo for COLING2022: Multilingual Word Sense Disambiguation wi
         --gloss-path ./mulan/mulan-de/gloss_new_combine.txt \
         --inventory-path ./mulan/mulan-de/de_inventory_filter_new_combine.txt \
         --grad-bsz 30 \
+        --split semeval2013-de \
         --multigpu \
         --eval
    ```
