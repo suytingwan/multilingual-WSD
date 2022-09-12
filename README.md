@@ -1,4 +1,4 @@
-This the the code repo for COLING2022: Multilingual Word Sense Disambiguation with Unified Sense Representation.
+This is the code repo for COLING2022: Multilingual Word Sense Disambiguation with Unified Sense Representation.
 
 ## Envs
    python 3.7
@@ -6,13 +6,13 @@ This the the code repo for COLING2022: Multilingual Word Sense Disambiguation wi
 
 ## BabelNet, Inventory and Evaluation benchmark
 
-   [BabelNet](https://babelnet.org) is a multilingual semantic lexicon which contains inventories for multiple languages. Inventories and multilingual WSD benchmark can be found at [https://github.com/SapienzaNLP/mwsd-datasets](https://github.com/SapienzaNLP/mwsd-datasets). For MWSD evaluation, we use the wn split. After handling the inventories and evaluation dataset, the data are placed under `./data`. We further convert the xml and gold key file in evaluation into csv format by:
+   [BabelNet](https://babelnet.org) is a multilingual semantic lexicon which contains inventories for multiple languages. Inventories and multilingual WSD benchmark can be found at [https://github.com/SapienzaNLP/mwsd-datasets](https://github.com/SapienzaNLP/mwsd-datasets). For MWSD evaluation, we use the wn split. After handling the inventories and evaluation dataset, the data are placed under `./data`. The xml and gold key file in evaluation are further converted into csv format by:
 
    ```
    cd ./preprocess
    python convert_xml_csv.py
    ```
-   A small percentage (20%) is sampled from semeval-2013 evaluation dataset for model selection and we place the sampled data under `./preprocess`.
+   A small percentage (20%) is sampled from semeval-2013 evaluation dataset for model selection and placed under `./preprocess`.
 
 ## Machine Translation and Fastalign
    First acquire the transalted corpora for languages DE, FR, IT and ES:
@@ -20,7 +20,7 @@ This the the code repo for COLING2022: Multilingual Word Sense Disambiguation wi
    cd ./translation
    python translate.py
    ```
-   Then, use [fastalign tool](https://github.com/clab/fast_align) to get the alignment between orginal semcor and translated corpora. This step will result alignment file. We place the aligned files under same folder.
+   Then, use [fastalign tool](https://github.com/clab/fast_align) to get the alignment between orginal semcor and translated corpora. This step will result alignment file under same folder.
 
    Finally, generate training corpora for multiple languages by:
    ```
@@ -29,15 +29,15 @@ This the the code repo for COLING2022: Multilingual Word Sense Disambiguation wi
 
 
 ## Online lexical knowledge gloss request
-   For experiments conducted on [MuLaN dataset](https://github.com/SapienzaNLP/mwsd-datasets), we first filter the dataset by synsets. 
+   For experiments conducted on [MuLaN dataset](https://github.com/SapienzaNLP/mwsd-datasets), the original data are filtered by inventories (WordNet split). 
 
-   MuLaN contains some Babel synsets which do not exist in WordNet. For fair evaluation of sense representations across languages, we filter out the training data labeled with synsets which are not shown in wn-split inventory generated from BabelNet.
+   MuLaN contains some Babel synsets which do not exist in WordNet. For feasible experiments(collecting glosses according to inventories), we filter out the training instances labeled with words which are not shown in wn-split inventory generated from BabelNet.
    ```
    cd mulan
    python filter_mulan.py  
    ``` 
 
-   For senses covered by annotated words but not shown in WordNet, we request BabelNet API to get gloss knowledge for the senses. In our work, we use online API version 4.0.1.
+   For senses covered by annotated words but not shown in WordNet, we request BabelNet API to get gloss knowledge for the senses.
 
    ```
    python request.py
