@@ -6,7 +6,7 @@ This the the code repo for COLING2022: Multilingual Word Sense Disambiguation wi
 
 ## BabelNet, Inventory and Evaluation benchmark
 
-   [BabelNet](https://babelnet.org) is a multilingual semantic lexicon which contains inventories for multiple languages. Inventories and multilingual WSD benchmark can be found at [https://github.com/SapienzaNLP/mwsd-datasets](https://github.com/SapienzaNLP/mwsd-datasets). For MWSD evaluation, we use the wn split. After handling the inventories and evaluation dataset, the data are placed under `./data`. For easy experiments, our preprocessed data can be download at [inventory and evaluation](). We further convert the xml and gold key file in evaluation into csv format by:
+   [BabelNet](https://babelnet.org) is a multilingual semantic lexicon which contains inventories for multiple languages. Inventories and multilingual WSD benchmark can be found at [https://github.com/SapienzaNLP/mwsd-datasets](https://github.com/SapienzaNLP/mwsd-datasets). For MWSD evaluation, we use the wn split. After handling the inventories and evaluation dataset, the data are placed under `./data`. We further convert the xml and gold key file in evaluation into csv format by:
 
    ```
    cd ./preprocess
@@ -45,7 +45,7 @@ This the the code repo for COLING2022: Multilingual Word Sense Disambiguation wi
    ```
 
 ## Experiments 
-   The difference between translated data and MuLaN is the different training data, inventories, and glosses. Since no validation data provided, a small percentage of test data from semevel13 is used as evaluation. 
+   The difference between translated data and MuLaN is the different training data, inventories, and glosses. Since no validation data provided, a small percentage of test data from semevel13 is used as evaluation. For easy experiments, our code and preprocessed data can be download at [inventory and evaluation](https://drive.google.com/drive/folders/1G79S-t2Li867bvDPjh2zQZMhgJa6CkKK?usp=sharing).
 
 ### Experiments with translated data
 
@@ -57,6 +57,7 @@ This the the code repo for COLING2022: Multilingual Word Sense Disambiguation wi
         --gloss-path ./mulan/mulan-de/gloss_new_combine.txt \
         --inventory-path ./mulan/mulan-de/de_inventory_filter_new_combine.txt \
         --grad-bsz 30 \
+        --split semeval2013-de \
         --multigpu \
         --valid-small
     ```
